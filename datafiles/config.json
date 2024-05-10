@@ -1,0 +1,50 @@
+[
+    {
+         "type": "section",
+         "name": "graphics",
+         "label": "Graphics",
+         "children": [
+            {
+                "type": "boolean",
+                "name": "paused",
+                "label": "Paused",
+                "value": false
+            },
+            {
+                "type": "select",
+                "name": "fps",
+                "label": "FPS",
+                "options": ["60fps", "30fps", "15fps"],
+                "value": "60fps"
+            },
+            {
+                "type": "colour",
+                "name": "colour",
+                "label": "Colour",
+                "value": "#FF0000"
+            }
+         ]
+    },
+    {
+        "type": "section",
+        "name": "general",
+        "label": "General",
+        "children": [
+            {
+                "type": "range",
+                "name": "spawn_rate",
+                "label": "Spawn rate",
+                "min": 0.0625,
+                "max": 4,
+                "step": 0.0625,
+                "value": 1
+            },
+            {
+                "type": "boolean",
+                "name": "follow_mouse",
+                "label": "Follow mouse",
+                "value": false
+            }
+        ]
+    }
+]

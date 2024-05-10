@@ -1,0 +1,41 @@
+{
+    "graphics": {
+        "type": "label",
+        "value": "graphics"
+    },
+    "graphics_paused": {
+        "type": "checkbox",
+        "text": "Paused",
+        "value": false
+    },
+    "graphics_fps": {
+        "text": "FPS",
+        "value": 0,
+        "items": [
+            "60fps",
+            "30fps",
+            "15fps"
+        ]
+    },
+    "graphics_colour": {
+        "text": "Colour",
+        "value": "#FF0000"
+    },
+    "general": {
+        "type": "label",
+        "value": "general"
+    },
+    "general_spawn_rate": {
+        "help": "",
+        "text": "Spawn rate",
+        "value": 1,
+        "min": 0.0625,
+        "max": 4,
+        "step": 0.0625
+    },
+    "general_follow_mouse": {
+        "type": "checkbox",
+        "text": "Follow mouse",
+        "value": false
+    }
+}
