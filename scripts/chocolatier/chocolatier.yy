@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"chocolatier",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"chocolatier",
+  "parent":{
+    "name":"Chocolatier",
+    "path":"folders/Extensions/Chocolatier.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,31 @@
+{
+  "$GMExtensionConfigSet": "GMExtensionConfigSet",
+  "configurables": {
+    "98911a64-f14b-4660-b4f2-2fafaf7eb9ab": null,
+    "e99eb865-37b1-42cb-9b5e-9ff55c9c9141": {
+      "Default": {
+        "value": "config.json"
+      }
+    },
+    "e5aaaf20-58f7-4bd5-bc1f-ef27c931fff7": null,
+    "3a87f157-1f2b-4ebb-b45e-dc9eb35810e1": null,
+    "6094931c-1744-4725-b023-0e717c87c8da": {
+      "Default": {
+        "value": "Andrew Rutherford"
+      }
+    },
+    "f7e335c5-6ebb-4cec-b691-dc8f4658a653": null,
+    "d16da663-1682-4dc3-aecd-54bdf9c2dfcd": {
+      "Default": {
+        "value": "Test Wallpaper"
+      }
+    },
+    "ddb08143-1295-4772-8465-9d5e634e36e1": {
+      "Default": {
+        "value": "A quick and dirty wallpaper designed to test out Lively Wallpaper and Wallpaper Engine"
+      }
+    },
+    "5a112ee9-ba83-419e-92e8-5a360c9aeffe": null,
+    "c1941842-94ff-4a87-a046-e99f680c4e95": null
+  }
+}
