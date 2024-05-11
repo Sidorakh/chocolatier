@@ -1,2 +1,2 @@
 /// @description 
-live_wallpaper_set_config()
+live_wallpaper_set_config();
