@@ -21,10 +21,10 @@
 
 # Why was Chocolatier made?
 
-Blame [TabularElf](https://github.com/TabularElf). They gave me the idea while I was waiting for someone outside a Chemist Warehouse. Credit to AtlaStar for the actually good name. 
+Made for the [Cookbook Jam](https://itch.io/jam/cookbook-jam-2). Blame [TabularElf](https://github.com/TabularElf). They gave me the idea while I was waiting for someone outside a Chemist Warehouse. Credit to AtlaStar for the actually good name. 
 
 ---
 
 # What license is Chocolatier released under?
 
-Chocolatier is under the [MIT License](https://github.com/Sidorakh/chocolatier/blob/master/LICENSE)
+Chocolatier is available under the [MIT License](https://github.com/Sidorakh/chocolatier/blob/master/LICENSE)
