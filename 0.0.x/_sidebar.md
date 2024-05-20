@@ -1,16 +1,26 @@
-- [Home](README.md)
-- [Getting Started](getting-started.md)
+- [Home](README)
+- [Getting Started](getting-started)
 
 ---
 
 **API Reference**
-- [`live_wallpaper_set_config()`](live_wallpaper_set_config.md)
-- [`live_wallpaper_handle_config_gx()`](live_wallpaper_handle_config_gx.md)
+- [`live_wallpaper_setup()`](live_wallpaper_setup)
+- [`live_wallpaper_handle_config_gx()`](live_wallpaper_handle_config_gx)
 - [`global.live_wallpaper_callback`](global_live_wallpaper_callback)
-- Internal functions
-  - [`live_wallpaper_magic_set`](live_wallpaper_magic_set.md)
-  - [`live_wallpaper_magic_get`](live_wallpaper_magic_get.md)
-  - [`live_wallpaper_parse_colour`](live_wallpaper_parse_colour.md)
-  - [`live_wallpaper_config_update`](live_wallpaper_config_update.md)
-  - [`live_wallpaper_json_walk`](live_wallpaper_json_walk.md)
-  - [`gmcallback_set_wallpaper_config`](gmcallback_set_wallpaper_config.md)
+- Metrics and System Information
+  - [About Metrics and System Information](metrics-about)
+  - [CPU Metrics](metrics-cpu)
+  - [GPU Metrics](metrics-gpu)
+  - [RAM Metrics](metrics-ram)
+  - [Battery Metrics](metrics-battery)
+  - [Storage Metrics](metrics-storage)
+  - [Audio Metrics](metrics-audio)
+  - [Media Information](metrics-media)
+- Internal Functions
+  - [`live_wallpaper_magic_set`](live_wallpaper_magic_set)
+  - [`live_wallpaper_magic_get`](live_wallpaper_magic_get)
+  - [`live_wallpaper_parse_colour`](live_wallpaper_parse_colour)
+  - [`live_wallpaper_config_update`](live_wallpaper_config_update)
+  - [`live_wallpaper_json_walk`](live_wallpaper_json_walk)
+  - [`gmcallback_set_wallpaper_config`](gmcallback_set_wallpaper_config)
+  
