@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const fname = process.env.YYEXTOPT_DesktopCandy_config_file;
+const fname = process.env.YYEXTOPT_Chocolatier_config_file;
 
 /** 
  * @typedef {Object} GXOption
@@ -65,48 +65,45 @@ console.log(`Loading config from datafiles/${fname}`);
 
 const config = require(path.join(process.env.YYprojectDir,'datafiles',fname));
 
-console.log(config);
-
-
 const lively_fields = [];
 const wpengine_fields = [];
 walk_base_config(config,lively_fields,wpengine_fields,'');
 
 
 const lively_info = {
-    AppVersion: process.env.YYEXTOPT_DesktopCandy_version,
-    Title: process.env.YYEXTOPT_DesktopCandy_title,
-    Thumbnail: '',//process.env.YYEXTOPT_DesktopCandy_thumbnail,
-    Desc: process.env.YYEXTOPT_DesktopCandy_description,
-    Author: process.env.YYEXTOPT_DesktopCandy_author,
-    License: process.env.YYEXTOPT_DesktopCandy_license,
+    AppVersion: process.env.YYEXTOPT_Chocolatier_version,
+    Title: process.env.YYEXTOPT_Chocolatier_title,
+    Thumbnail: '',
+    Desc: process.env.YYEXTOPT_Chocolatier_description,
+    Author: process.env.YYEXTOPT_Chocolatier_author,
+    License: process.env.YYEXTOPT_Chocolatier_license,
     FileName: "index.html",
-    Arguments: null,
+    Arguments: "--system-information --system-nowplaying --pause-event true --audio",
     IsAbsolutePath: false,
 };
 
 const wpengine_info = {
-    contentrating: process.env.YYEXTOPT_DesktopCandy_content_rating,
-    description: process.env.YYEXTOPT_DesktopCandy_description,
+    contentrating: process.env.YYEXTOPT_Chocolatier_content_rating,
+    description: process.env.YYEXTOPT_Chocolatier_description,
     file: 'index.html',
     general: {
         properties:{},
         supportsaudioprocessing:false,
     },
-    preview: '',//process.env.YYEXTOPT_DesktopCandy_thumbnail,
-    tags: process.env.YYEXTOPT_DesktopCandy_tags.split(','),
-    title: process.env.YYEXTOPT_DesktopCandy_title,
+    preview: '',
+    tags: process.env.YYEXTOPT_Chocolatier_tags.split(','),
+    title: process.env.YYEXTOPT_Chocolatier_title,
     type: 'web',
-    version: process.env.YYEXTOPT_DesktopCandy_version,
+    version: process.env.YYEXTOPT_Chocolatier_version,
 }
 
 // Set up thumbnails (if they exist)
-if (process.env.YYEXTOPT_DesktopCandy_thumbnail != "") {
-    const thumb = path.join(process.env.YYprojectDir,'datafiles',process.env.YYEXTOPT_DesktopCandy_thumbnail);
+if (process.env.YYEXTOPT_Chocolatier_thumbnail != "") {
+    const thumb = path.join(process.env.YYprojectDir,'datafiles',process.env.YYEXTOPT_Chocolatier_thumbnail);
     if (fs.existsSync(thumb)) {
-        fs.copyFileSync(thumb,path.join(process.env.YYoutputFolder,process.env.YYEXTOPT_DesktopCandy_thumbnail));
-        lively_info.Thumbnail = process.env.YYEXTOPT_DesktopCandy_thumbnail;
-        wpengine_info.preview = process.env.YYEXTOPT_DesktopCandy_thumbnail;
+        fs.copyFileSync(thumb,path.join(process.env.YYoutputFolder,process.env.YYEXTOPT_Chocolatier_thumbnail));
+        lively_info.Thumbnail = process.env.YYEXTOPT_Chocolatier_thumbnail;
+        wpengine_info.preview = process.env.YYEXTOPT_Chocolatier_thumbnail;
         
     }
 }
@@ -280,11 +277,17 @@ function walk_base_config(/** @type {(GXSection | GXOption)[]} */ base,/** @type
             lively.push(lively_write_checkbox(option,key_path));
             wpengine.push(wpengine_write_checkbox(option,key_path));
         }
-        if (option.type == 'string') {
+        if (option.type == 'string' || option.type == 'multiline_string') {
             lively.push(lively_write_textbox(option,key_path));
             wpengine.push(wpengine_write_textbox(option,key_path));
         }
         if (option.type == 'color' || option.type == 'colour') {
+            if (typeof(option.value) === 'number') {
+                const bgr = option.value;
+                const rgb = ((bgr & 0xFF) << 16) | ( bgr & 0xFF00) | (bgr >> 16);
+                const colour = rgb.toString(16)
+                option.value = `#${colour}`;
+            }
             lively.push(lively_write_color(option,key_path));
             wpengine.push(wpengine_write_color(option,key_path));
         }
