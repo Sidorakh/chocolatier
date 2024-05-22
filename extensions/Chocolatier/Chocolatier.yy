@@ -16,7 +16,7 @@
   "exportToGame":true,
   "extensionVersion":"0.0.1",
   "files":[
-    {"$GMExtensionFile":"","%Name":"","constants":[],"copyToTargets":-1,"filename":"wallpaper.js","final":"","functions":[
+    {"$GMExtensionFile":"","%Name":"","constants":[],"copyToTargets":32,"filename":"wallpaper.js","final":"","functions":[
         {"$GMExtensionFunction":"","%Name":"chocolatier_get_current_config","argCount":0,"args":[],"documentation":"","externalName":"chocolatier_get_current_config","help":"desktop_candy_get_current_config()","hidden":false,"kind":5,"name":"chocolatier_get_current_config","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
         {"$GMExtensionFunction":"","%Name":"chocolatier_get_initial_metrics","argCount":0,"args":[],"documentation":"","externalName":"chocolatier_get_initial_metrics","help":"chocolatier_get_initial_metrics","hidden":false,"kind":5,"name":"chocolatier_get_initial_metrics","resourceType":"GMExtensionFunction","resourceVersion":"2.0","returnType":1,},
       ],"init":"","kind":5,"name":"","order":[],"origname":"","ProxyFiles":[],"resourceType":"GMExtensionFile","resourceVersion":"2.0","uncompress":false,"usesRunnerInterface":false,},

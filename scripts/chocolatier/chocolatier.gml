@@ -18,7 +18,6 @@ function live_wallpaper_setup() {
 	}
 }
 
-
 global.live_wallpaper_config = {};
 global.live_wallpaper_types = {};
 global.live_wallpaper_special_values = [];
@@ -215,7 +214,7 @@ global.live_wallpaper_metrics = {
 		remaining_charge_time: -1,
 		time_to_full_charge: -1,
 	},
-	disks: [],
+	storage: [],
 };
 
 function live_wallpaper_handle_metrics_gx(data) {
@@ -271,6 +270,43 @@ function live_wallpaper_handle_metrics_gx(data) {
 		metric.bandwidth = networking[$ "bandwidth_bps"] ?? metric.bandwidth;
 		metric.send_bps = networking[$ "send_bps"] ?? metric.send_bps;
 		metric.received_bps = networking[$ "received_bps"] ?? metric.received_bps;
+	}
+	if (data[$ "disk"] != undefined && array_length(data[$ "disk"]) > 0) {
+		var metric = global.live_wallpaper_metrics.storage;
+		for (var i=0;i<array_length(data.disk);i++) {
+			var disk = {
+				name: data.disk[i].name ?? "",
+				available_bytes: int64(data.disk[i][$ "available_bytes"] ?? 0),
+				total_bytes: int64(data.disk[i][$ "total_bytes"] ?? 0),
+				used_bytes: int64(data.disk[i][$ "used_bytes"] ?? 0)
+			};
+			var index = -1;
+			for (var j=0;j<array_length(metric);j++) {
+				var mydisk = metric[j];
+				if (mydisk.name == disk.name) {
+					index = j;
+					break;
+				}
+			}
+			if (index != -1) {
+				metric[index].name = disk[$ "name"] ?? metric[index].name;
+				metric[index].available_bytes = disk[$ "available_bytes"] ?? metric[index].available_bytes;
+				metric[index].total_bytes = disk[$ "total_bytes"] ?? metric[index].total_bytes;
+				metric[index].used_bytes = disk[$ "used_bytes"] ?? metric[index].used_bytes;
+			} else {
+				var newdisk = {
+					name: disk[$ "name"] ?? "",
+					available_bytes: disk[$ "available_bytes"] ?? 0,
+					total_bytes: disk[$ "total_bytes"] ?? 1,
+					used_bytes: disk[$ "used_bytes"] ?? 0,
+				}
+				array_push(metric,newdisk);	
+				
+			}
+		}
+	}
+	if (data[$ "audio"] != undefined && array_length(data[$ "audio"]) > 0) {
+		
 	}
 }
 
