@@ -6,6 +6,8 @@ draw_text(4,20,json_stringify(global.live_wallpaper_types));
 
 //var str = $"{global.live_wallpaper_current_media.title} ({global.live_wallpaper_media_position.position}/{global.live_wallpaper_media_position.duration})\n{global.live_wallpaper_media_playback_state}";
 
+
+/*
 var str = "";//json_stringify(global.live_wallpaper_metrics.storage,true);
 
 for (var i = 0;i<array_length(global.live_wallpaper_metrics.storage);i++) {
@@ -15,3 +17,15 @@ for (var i = 0;i<array_length(global.live_wallpaper_metrics.storage);i++) {
 
 
 draw_text(4,52,str);
+*/
+
+if (array_length(global.live_wallpaper_metrics.audio.levels)) {
+	for (var i=0;i<64;i++) {
+		var level = global.live_wallpaper_metrics.audio.levels[i];
+		draw_line(i,room_height,i,room_height-(64 * level));
+	}
+	for (var i=64;i<128;i++) {
+		var level = global.live_wallpaper_metrics.audio.levels[i];
+		draw_line((room_width-128)+i,room_height,(room_width-128)+i,room_height-(64 * level));
+	}
+}

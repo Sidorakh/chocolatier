@@ -215,6 +215,11 @@ global.live_wallpaper_metrics = {
 		time_to_full_charge: -1,
 	},
 	storage: [],
+	audio: {
+		freq_resolution: -1,
+		spectrum_amplitude: [],
+		levels: [],
+	}
 };
 
 function live_wallpaper_handle_metrics_gx(data) {
@@ -306,7 +311,11 @@ function live_wallpaper_handle_metrics_gx(data) {
 		}
 	}
 	if (data[$ "audio"] != undefined && array_length(data[$ "audio"]) > 0) {
+		var metric = global.live_wallpaper_metrics.audio;
+		var audio = data.audio;
+		if (audio[$ ""]) {
 		
+		}
 	}
 }
 
@@ -376,6 +385,10 @@ function gmcallback_current_media_position(data) {
 
 function gmcallback_current_playback_state(state) {
 	global.live_wallpaper_media_playback_state = state;
+}
+
+function gmcallback_system_audio_data(data) {
+	global.live_wallpaper_metrics.audio.levels = json_parse(data);
 }
 
 // quick and dirty wrap of wallpaper_set_subscriptions to not error on HTML5

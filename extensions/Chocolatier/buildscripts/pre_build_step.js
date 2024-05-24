@@ -88,7 +88,7 @@ const wpengine_info = {
     file: 'index.html',
     general: {
         properties:{},
-        supportsaudioprocessing:false,
+        supportsaudioprocessing:true,
     },
     preview: '',
     tags: process.env.YYEXTOPT_Chocolatier_tags.split(','),

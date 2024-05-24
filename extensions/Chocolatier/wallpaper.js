@@ -84,12 +84,13 @@ if (__lively_init.initial_metrics != "") {
 // audio levels listener
 window.livelyAudioListener = function(audio) {
     // TODO: maybe put something here
+    window.gml_Script_gmcallback_system_audio_data(null,null,JSON.stringify(audio));
 }
 
 // on wallpaper pause and unpause
 window.livelyWallpaperPlaybackChanged = function(data) {
     const evt = JSON.parse(data);
-    gml_Script_gmcallback_handle_lively_playback_state_change(evt.isPaused);
+    gml_Script_gmcallback_handle_lively_playback_state_change(null,null,evt.isPaused);
 }
 if (__lively_init.initial_playback_changed != '') {
     window.livelyWallpaperPlaybackChanged(__lively_init.initial_playback_changed);
@@ -284,6 +285,19 @@ try {
 }
 
 
+
+function wallpaper_audio_listener(/** @type {number[]} */ event) {
+    console.log(event);
+    window.gml_Script_gmcallback_system_audio_data(null,null,JSON.stringify(event));
+}
+
+
+try {
+    wallpaperRegisterAudioListener(wallpaper_audio_listener);
+} catch(e) {
+    // not wallpaper engine
+}
+
 window.wallpaperPropertyListener = {
     applyUserProperties: function(properties) {
         const keys = Object.keys(properties);
@@ -297,6 +311,8 @@ window.wallpaperPropertyListener = {
     }
 
 }
+
+
 
 
 
