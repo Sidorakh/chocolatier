@@ -1,0 +1,3 @@
+- [**Download the latest release**](https://github.com/Sidorakh/chocolatier/releases)
+- [**Report an issue**](https://github.com/Sidorakh/chocolatier/issues)
+- [**Support me**](https://paypal.me/sidorakh)
