@@ -3,13 +3,14 @@
 ## Installation and basic usage
 
 1. Download the latest .yymp from [Releases](https://github.com/Sidorakh/chocolatier/releases)
-2. Open your GameMaker project (or create a new one) and drag the .yymp file into the IDE (or go to the Tools menu and select Import Local Package)
-3. Ensure you at least import the Chocolatier folder in "Extensions" (optionally, you can import everything for a basic wallpaper example)
-4. Create your initial wallpaper configuration following the strucutre set out by [the documentation for GX Live Wallpapers](https://manual.gamemaker.io/beta/en/GameMaker_Language/GML_Reference/Live_Wallpapers/wallpaper_set_config.htm) and save it as an included file. Optionally, you can also use my [Chocolatier Configuration Buidler](https://tools.sidorakh.net/chocolatier) which will allow you to build Opera GX and Chocolatier-compatible config files
-5. Open Chocolatier, and ensure that the config filename is correct (this should match the included file you created in step 4), as well as all the other details/
-6. Ensure `live_wallpaper_setup();` is called when your wallpaper starts up - this sets up api's for Opera GX, Lively, and Wallpaper Engine
-7. Ensure you add a `Wallpaper Config` event and run `live_wallpaper_handle_config_gx(wallpaper_config);` in it to handle Opera GX configuration updates
-8. You can now access the configuration in the struct `global.live_wallpaper_config`. You can set `gloal.live_wallpaper_callback` to a function or method, which will be called whenever the configuration updates
+2. Download Node.js v20 from [nodejs.org](https://nodejs.org/) (other versions may work, the included buidl script only needs access to the native `fs` module)
+3. Open your GameMaker project (or create a new one) and drag the .yymp file into the IDE (or go to the Tools menu and select Import Local Package)
+4. Ensure you at least import the Chocolatier folder in "Extensions" (optionally, you can import everything for a basic wallpaper example)
+5. Create your initial wallpaper configuration following the strucutre set out by [the documentation for GX Live Wallpapers](https://manual.gamemaker.io/beta/en/GameMaker_Language/GML_Reference/Live_Wallpapers/wallpaper_set_config.htm) and save it as an included file. Optionally, you can also use my [Chocolatier Configuration Buidler](https://tools.sidorakh.net/chocolatier) which will allow you to build Opera GX and Chocolatier-compatible config files
+6. Open Chocolatier, and ensure that the config filename is correct (this should match the included file you created in step 4), as well as all the other details/
+7. Ensure `live_wallpaper_setup();` is called when your wallpaper starts up - this sets up api's for Opera GX, Lively, and Wallpaper Engine
+8. Ensure you add a `Wallpaper Config` event and run `live_wallpaper_handle_config_gx(wallpaper_config);` in it to handle Opera GX configuration updates
+9. You can now access the configuration in the struct `global.live_wallpaper_config`. You can set `gloal.live_wallpaper_callback` to a function or method, which will be called whenever the configuration updates
 
 ## Chocolatier Configuration
 

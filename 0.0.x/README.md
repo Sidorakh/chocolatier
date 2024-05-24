@@ -14,10 +14,15 @@
 
 # Features
 
-- Wraps up Lively Wallpaper and Wallpaper Engine's configurations to work with the same format as Opera GX
-- Exposes some metrics as available through Lively Wallpaper and Wallpaper Engine respectively
+- Exposes all available metrics on each platform under one API (support for metrics varies per platform)
+- Exposes system media data for each platform
+- Automatically generates configuration files for Lively Wallpaper< Wallpaper Engine, and Opera GX, based off a single config file
 
 ---
+
+# Prerequisites
+
+- Requires Node.js v20 on development machines (any version with antive access to the `fs` module should work)
 
 # Why was Chocolatier made?
 
