@@ -287,7 +287,6 @@ try {
 
 
 function wallpaper_audio_listener(/** @type {number[]} */ event) {
-    console.log(event);
     window.gml_Script_gmcallback_system_audio_data(null,null,JSON.stringify(event));
 }
 
@@ -301,7 +300,6 @@ try {
 window.wallpaperPropertyListener = {
     applyUserProperties: function(properties) {
         const keys = Object.keys(properties);
-        console.log(keys);
         for (const key of keys) {
             if (properties[key].type != 'group') {
                 set(options,key,properties[key].value)

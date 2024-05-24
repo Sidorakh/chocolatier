@@ -122,7 +122,7 @@ function gmcallback_set_wallpaper_config(str){
 			
 		} else if (type == "color") {
 			// colour
-			live_wallpaper_magic_set(global.live_wallpaper_config,path,"color: " + value);
+			live_wallpaper_magic_set(global.live_wallpaper_config,path,live_wallpaper_parse_colour(value));
 		} else {
 			// nothign else needs special handling.. probably
 			live_wallpaper_magic_set(global.live_wallpaper_config,path,value);
